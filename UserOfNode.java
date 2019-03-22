@@ -15,12 +15,12 @@ public class UserOfNode {
         System.out.println( noNext
                           + System.lineSeparator());
 
-        // // node with a reference, testing accessors
-        // System.out.println( "node with a reference, testing accessors");
-        // Node nextSet = new Node(  1.618); // autobox to Double
-        // nextSet.setReferenceToNextNode( noNext);
-        // System.out.println( nextSet
-                          // + System.lineSeparator());
+        // node with a reference, testing accessors
+        System.out.println( "node with a reference, testing accessors");
+        Node nextSet = new Node(  1.618); // autobox to Double
+        nextSet.setReferenceToNextNode( noNext);
+        System.out.println( nextSet
+                          + System.lineSeparator());
 
         // // 2-arg constructor obviates setReferenceToNextNode
         // System.out.println(
