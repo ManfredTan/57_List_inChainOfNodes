@@ -22,11 +22,11 @@ public class UserOfNode {
         System.out.println( nextSet
                           + System.lineSeparator());
 
-        // // 2-arg constructor obviates setReferenceToNextNode
-        // System.out.println(
-            // "2-arg constructor obviates setReferenceToNextNode");
-        // Node twoArgCon = new Node( new String( "kiwi"), nextSet);
-        // System.out.println( twoArgCon
-                          // + System.lineSeparator());
+        // 2-arg constructor obviates setReferenceToNextNode
+        System.out.println(
+            "2-arg constructor obviates setReferenceToNextNode");
+        Node twoArgCon = new Node( new String( "kiwi"), nextSet);
+        System.out.println( twoArgCon
+                          + System.lineSeparator());
     }
 }
