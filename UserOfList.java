@@ -46,10 +46,12 @@ public class UserOfList {
 
         //List_inChainOfNodes.set
         System.out.println( "Changing index 3: " + list.set(3,"b") + " to b" );
+        System.out.println( "Changing index 0: " + list.set(0,"M") + " to M" );
         System.out.println( list + System.lineSeparator());
 
         //List_inChainOfNodes.get
         System.out.println( "Return index 3: " + list.get(3) + System.lineSeparator());
+        System.out.println( "Return index 0: " + list.get(0) + System.lineSeparator());
 
         //List_inChainOfNodes.add
         list.add(2, "X");
@@ -58,6 +60,9 @@ public class UserOfList {
         //List_inChainOfNodes.remove
         System.out.println( "Remove index 2: " + list.remove(2) );
         System.out.println( list + System.lineSeparator() );
+        System.out.println( "Remove index 0: " + list.remove(0) );
+        System.out.println( list + System.lineSeparator() );
+
 
 
     }

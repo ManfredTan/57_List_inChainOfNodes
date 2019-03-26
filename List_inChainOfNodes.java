@@ -77,24 +77,35 @@ public class List_inChainOfNodes{
      }
 
      public void add (int index, Object value) {
-         int nodeIndex = 0;
-         Node nodeBefore;
-         for (nodeBefore = headReference; nodeIndex < index; nodeBefore = nodeBefore.getReferenceToNextNode() )
-             nodeIndex++;
-         Node newNode = new Node( value, nodeBefore.getReferenceToNextNode() );
-         nodeBefore.setReferenceToNextNode( newNode);
+         if (index == 0) addAsHead(value);
+         else {
+             Node nodeBefore = getNode(index);
+             Node newNode = new Node( value, nodeBefore.getReferenceToNextNode() );
+             nodeBefore.setReferenceToNextNode( newNode);
+         }
+
      }
 
      public Object remove (int index) {
-         int nodeIndex = 0;
-         Node nodeBefore;
-         Node nodeToRemove;
+         Node nodeToRemove = getNode(index-1);
          Object oldCargo;
-         for (nodeBefore = headReference; nodeIndex < (index - 1); nodeBefore = nodeBefore.getReferenceToNextNode() )
-             nodeIndex++;
         nodeToRemove = nodeBefore.getReferenceToNextNode();
         nodeBefore.setReferenceToNextNode( nodeToRemove.getReferenceToNextNode() );
         return nodeToRemove.getCargoReference();
      }
+
+
+     /* 2019-03-26 Updates:
+     - factor out iteration --> getNode( int index)
+     - add(0,value) --> addAsHead
+     */
+     public Node getNode (int index) {
+         int nodeIndex = 0;
+         Node currentNode;
+         for (currentNode = headReference; nodeIndex < index; currentNode = currentNode.getReferenceToNextNode() )
+            nodeIndex++;
+         return currentNode;
+     }
+
 
 }
