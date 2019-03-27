@@ -87,11 +87,18 @@ public class List_inChainOfNodes{
      }
 
      public Object remove (int index) {
-         Node nodeToRemove = getNode(index-1);
          Object oldCargo;
-        nodeToRemove = nodeBefore.getReferenceToNextNode();
-        nodeBefore.setReferenceToNextNode( nodeToRemove.getReferenceToNextNode() );
-        return nodeToRemove.getCargoReference();
+         if (index == 0) {
+             oldCargo = headReference.getCargoReference();
+             headReference = headReference.getReferenceToNextNode();
+         }
+         else {
+             Node nodeBefore = getNode(index-1);
+             Node nodeToRemove = nodeBefore.getReferenceToNextNode();
+             oldCargo = nodeToRemove.getCargoReference();
+             nodeBefore.setReferenceToNextNode( nodeToRemove.getReferenceToNextNode() );
+         }
+         return oldCargo;
      }
 
 
@@ -102,8 +109,7 @@ public class List_inChainOfNodes{
      public Node getNode (int index) {
          int nodeIndex = 0;
          Node currentNode;
-         for (currentNode = headReference; nodeIndex < index; currentNode = currentNode.getReferenceToNextNode() )
-            nodeIndex++;
+         for (currentNode = headReference; nodeIndex < index; nodeIndex++ , currentNode = currentNode.getReferenceToNextNode() ) {}
          return currentNode;
      }
 

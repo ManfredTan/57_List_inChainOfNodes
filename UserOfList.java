@@ -55,7 +55,9 @@ public class UserOfList {
 
         //List_inChainOfNodes.add
         list.add(2, "X");
-        System.out.println( "Add at index 3: " + System.lineSeparator() + list + System.lineSeparator() );
+        System.out.println( "Add at index 3: X" + System.lineSeparator() + list + System.lineSeparator() );
+        list.add(0, "H");
+        System.out.println( "Add at index 0: H" + System.lineSeparator() + list + System.lineSeparator() );
 
         //List_inChainOfNodes.remove
         System.out.println( "Remove index 2: " + list.remove(2) );
